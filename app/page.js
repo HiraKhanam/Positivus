@@ -35,10 +35,9 @@ const [open, setOpen] = useState(0);
 const handleOpen = (value) => {
 setOpen(open === value ? 0 : value);
 };
+const [showMenu, setShowMenu] = useState(false);
 return (
-<html lang="en">
-  <body>
-    <div className='lg:px-[100px] px-5 max-w-[1440px] mx-auto'>
+    <div className='px-5 max-w-[1440px] mx-auto overflow-hidden'>
       
       <header className="mx-auto p-lg-12 p-5">
         <nav className='lg:flex hidden justify-between items-center'>
@@ -51,19 +50,19 @@ return (
             priority
             />
           </a>
-          <div className='flex gap-x-10 align-items-center my-auto'>
-            <ul className='text-xl flex gap-x-10 text-black font-normal my-auto'>
+          <div className='flex xl:gap-x-10 gap-x-6 align-items-center my-auto'>
+            <ul className='xl:text-xl text-lg flex xl:gap-x-10 gap-x-6 text-black font-normal my-auto'>
               <li>About us</li>
               <li>Services</li>
               <li>Use Cases</li>
               <li>Pricing</li>
               <li>Blog</li>
             </ul>
-            <button className='border-black border text-xl font-normal text-black rounded-[14px] px-9 py-5 my-auto hover:bg-black hover:text-white'>Request a quote</button>
+            <button className='border-black border text-xl font-normal text-black rounded-[14px] 2xl:px-9 px-4 py-5 my-auto hover:bg-black hover:text-white'>Request a quote</button>
           </div>
         </nav>
-        {/* <nav>
-          <div className="flex justify-between">
+         <nav className='lg:hidden block'>
+          <div className="flex justify-between gap-x-6">
             <a href="#" className='my-auto'>
               <Image
               src="/logo.svg"
@@ -73,7 +72,7 @@ return (
               priority
               />
             </a>
-            <a href="">
+            <button onClick={() => setShowMenu(!showMenu)}>
               <Image
               src="/BurgerMenu.svg"
               alt="menu"
@@ -81,11 +80,15 @@ return (
               height={16}
               priority
               />
-            </a>
+            </button>
           </div>
-          <div>
+          <div  className={ 
+                            showMenu
+                              ? "absolute top-16 left-0 w-full block lg:hidden py-5 z-40 bg-black transition duration-700 ease-in-out"
+                              : "absolute top-16 left-0 hidden lg:hidden py-5  z-40 bg-black ease-in-out"}
+                            id="mobile-nav">
             <div className='flex flex-col gap-x-10 align-items-center my-auto'>
-              <ul className='text-xl flex flex-col gap-y-6 text-black font-normal my-auto'>
+              <ul className='text-xl flex flex-col gap-y-6 text-white px-6 font-normal my-auto'>
                 <li>About us</li>
                 <li>Services</li>
                 <li>Use Cases</li>
@@ -95,8 +98,8 @@ return (
               <button className='border-black border text-xl font-normal text-black rounded-[14px] px-9 py-5 my-auto hover:bg-black hover:text-white'>Request a quote</button>
             </div>
           </div>
-        </nav> */}
-        <div className="lg:py-[100px] flex lg:flex-row flex-col lg:justify-between justify-center mx-auto items-center">
+        </nav>
+        <div className="lg:py-[100px] flex lg:flex-row flex-col lg:justify-between justify-center mx-auto items-center py-10">
           <div className="max-w-[513px]">
             <h1 className="font-medium text-6xl text-black">
             Navigating the digital landscape for success
@@ -180,7 +183,7 @@ return (
           />
         </div>
       </section>
-      <section className='lg:py-[100px] py-[60px] max-w-[1440px] mx-auto'>
+      <section className='lg:py-[100px] py-5 max-w-[1440px] mx-auto'>
         <div className='mx-auto flex gap-x-10 items-center lg:flex-row flex-col gap-y-7  pb-lg-20 pb-10'>
           <h2 className='font-medium lg:text-[40px] text-4xl lg:text-left text-center bg-[#B9FF66] max-w-[178px] text-center rounded-md px-2 py-0.5'>Services</h2>
           <p class="lg:text-lg text-base text-black max-w-[580px] lg:text-left text-center">At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:</p>
@@ -369,45 +372,45 @@ return (
         </div>
       </section>
       <section className='py-[100px] lg:max-w-[1440px] mx-auto'>
-        <div className='relative py-5'>
-          <div className='lg:p-[60px] p-[50px] rounded-[45px] bg-zinc-100'>
+        <div className='relative flex lg:flex-row flex-col gap-5 items-center py-5'>
+          <div className=' rounded-[45px] bg-zinc-100'>
             <div className='lg:max-w-[500px]'>
               <h2 className='font-medium lg:text-3xl text-[26px] text-black'>Let’s make things happen</h2>
               <p className='text-lg font-normal text-black py-5'>Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
-              <button className='text-xl text-white bg-zinc-900 rounded-[14px] py-5 px-9 hover:bg-white hover:text-zinc-900 lg:w-auto w-full border border-zinc-900'>Get your free proposal</button>
+              <button className='text-xl text-white bg-gray-900 rounded-[14px] py-5 px-9 hover:bg-white hover:text-zinc-900 lg:w-auto w-full border border-zinc-900'>Get your free proposal</button>
             </div>
           </div>
           <Image
           src="/stars.svg"
           alt="Logo"
-          className="lg:block hidden absolute right-40 top-0"
+          className=""
           width={359}
           height={394}
           />
         </div>
       </section>
-      <section className='py-36 max-w-[1440px] mx-auto'>
-        <div className='mx-auto flex gap-x-10 items-center lg:flex-row flex-col gap-y-7 pb-lg-20 pb-10'>
+      <section className='lg:py-36 py-5 max-w-[1440px] mx-auto'>
+        <div className='mx-auto flex gap-x-4 items-center lg:flex-row flex-col gap-y-7 pb-lg-20 pb-10'>
           <h2 className='font-medium lg:text-[40px] text-4xl lg:text-left'>
           <span className='bg-[#B9FF66] px-2 py-0.5 rounded-md'> Case Studies</span> </h2>
-          <p class="lg:text-lg text-base text-black max-w-[580px] lg:text-left text-center">Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies</p>
+          <p class="lg:text-lg text-base text-black max-w-[530px] xl:w-full lg:text-left text-center">Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies</p>
         </div>
-        <div className='lg:py-[70px] py-[42px] bg-black border border-2 rounded-[45px]'>
-          <Swiper className="mySwiper"
+        <div className='xl:py-[70px] md:py-6 py-4 xl:px-[40px] md:px-6 px-4 py-[42px] bg-black border border-2 rounded-[45px]'>
+          <Swiper className="mySwiper" init="false"
           slidesPerView={1}
-          spaceBetween={64}
+          spaceBetween={10}
           breakpoints={{
           768: {
-          slidesPerView:1,
-          spaceBetween:40,
+          slidesPerView:2,
+          spaceBetween:10,
           },
           1024: {
           slidesPerView:3,
-          spaceBetween:64,
+          spaceBetween:10,
           },
           }}>
           <SwiperSlide>
-          <div className="lg:px-16 px-[50px] lg:py-0">
+          <div className="px-4 lg:py-0">
             <p className='text-lg font-normal text-white pb-5'>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
             <button className='flex gap-x-4 text-[#B9FF66] items-center'>Learn more
             <Image
@@ -422,7 +425,7 @@ return (
             </div>
           </div>
           </SwiperSlide>
-          <SwiperSlide>  <div className="lg:px-16 px-[50px] lg:bg-transparent bg-black lg:border-l border-r border-white">
+          <SwiperSlide>  <div className="px-4 lg:bg-transparent bg-black md:border-l lg:border-r border-white">
             <p className='text-lg font-normal text-white pb-5'>For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.</p>
             <button className='flex gap-x-4 text-[#B9FF66] items-center'>Learn more
             <Image
@@ -436,7 +439,7 @@ return (
             <div>
             </div>
           </div></SwiperSlide>
-          <SwiperSlide>  <div className="lg:px-16 px-[50px] rounded-[45px]">
+          <SwiperSlide>  <div className="px-4 rounded-[45px]">
             <p className='text-lg font-normal text-white pb-5'>&quotFor a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.&quot</p>
             <button className='flex gap-x-4 text-[#B9FF66] items-center'>Learn more
             <Image
@@ -454,7 +457,7 @@ return (
           </Swiper>
         </div>
       </section>
-      <section className='py-36 max-w-[1440px] mx-auto'>
+      <section className='lg:py-36 py-5 max-w-[1440px] mx-auto'>
         <div className='mx-auto flex gap-x-10 items-center lg:flex-row flex-col gap-y-7 pb-lg-20 pb-10'>
           <h2 className='font-medium lg:text-[40px] text-4xl lg:text-left'>
           <span className='bg-[#B9FF66] px-2 py-0.5 rounded-md'> Our Working Process </span> </h2>
@@ -641,39 +644,6 @@ return (
         </div>
         <button className='py-5 px-9 lg:w-auto w-full text-center border border-black bg-black text-white hover:bg-white hover:text-black text-xl rounded-[14px] flex lg:ml-auto mt-10'>See all team</button>
       </section>
-      {/* <section className='py-[100px] mx-auto max-w-[1440px]'>
-        <div className='mx-auto flex gap-x-10 items-center lg:flex-row flex-col gap-y-7 pb-lg-20 pb-10'>
-          <h2 className='font-medium lg:text-[40px] text-4xl lg:text-left'>
-          <span className='bg-[#B9FF66] px-2 py-0.5 rounded-md'>Testimonials</span> </h2>
-          <p class="lg:text-lg text-base text-black max-w-[476px] lg:text-left text-center">Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services</p>
-        </div>
-        <div className='lg:pt-[84px]  pb-[68] py-[42px] bg-black border border-2 rounded-[45px]'>
-          <Swiper className="mySwiper"
-          slidesPerView={1}
-          spaceBetween={64}
-          breakpoints={{
-          768: {
-          slidesPerView: 1,
-          spaceBetween: 40,
-          },
-          1024: {
-          slidesPerView: 3,
-          spaceBetween: 64,
-          },
-          }}>
-          <SwiperSlide className=''>
-          <Image src="/Bubble.svg" width={606} height={237}  className='absolute top-0'/>
-          <div className="lg:px-[52px] lg:py-12 w-[606px] bg-cover bg-no-repeat bg-center">
-            <p className='text-lg font-normal text-white pb-5'>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
-            <div>
-            </div>
-          </div>
-          </SwiperSlide>
-          </Swiper>
-        </div>
-      </section> */}
     </div>
-  </body>
-</html>
 );
 }
