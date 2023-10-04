@@ -113,7 +113,7 @@ return (
             priority
             />
             <p className="text-xl font-black font-normal lg:py-9 py-5">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
-            <button className="py-5 px-9 text-white bg-zinc-900 rounded-[14px] hover:bg-white hover:text-zinc-900 hover:border-zinc-900 border lg:w-auto w-full">Book a consultation</button>
+            <button className="py-5 px-9 text-white bg-gray-900 rounded-[14px] hover:bg-white hover:text-zinc-900 hover:border-zinc-900 border lg:w-auto w-full">Book a consultation</button>
           </div>
           <Image
           src="/Illustration.svg"
