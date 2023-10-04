@@ -43,9 +43,9 @@ return (
         <nav className='lg:flex hidden justify-between items-center'>
           <a href="#" className='my-auto'>
             <Image
-            src="/logo.svg"
+            src="/Logo.svg"
             alt="Logo"
-            width={219}
+            width={200}
             height={36}
             priority
             />
@@ -65,9 +65,9 @@ return (
           <div className="flex justify-between gap-x-6">
             <a href="#" className='my-auto'>
               <Image
-              src="/logo.svg"
+              src="/Logo.svg"
               alt="Logo"
-              width={219}
+              width={200}
               height={36}
               priority
               />
